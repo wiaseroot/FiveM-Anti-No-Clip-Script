@@ -68,19 +68,19 @@ function GetPlayers()
     return players
 end
 
--- Oyuncu oyuna katıldığında sıfırlama
+
 AddEventHandler('playerConnecting', function(playerName, setKickReason, deferrals)
     local source = source
     playerWarnings[source] = nil
 end)
 
--- Oyuncu ayrıldığında sıfırlama
+
 AddEventHandler('playerDropped', function(reason)
     local source = source
     playerWarnings[source] = nil
 end)
 
--- Performans optimizasyonları
+-- Performance
 Citizen.CreateThread(function()
     while true do
         Citizen.Wait(60000) -- Her dakika bellek optimizasyonu
